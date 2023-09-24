@@ -1,0 +1,25 @@
+.header {
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+}
+
+.header__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.form {
+    width: 650px;
+    display: flex;
+    gap: 15px;
+}
+
+.form__search {
+    background: $accent;
+    padding: 15px 20px;
+    width: 100%;
+    border-radius: 25px;
+}
