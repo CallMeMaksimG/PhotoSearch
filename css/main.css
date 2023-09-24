@@ -99,6 +99,7 @@ a {
 }
 
 .container {
+  width: 100%;
   padding: 0 15px;
   max-width: 1140px;
   margin: 0 auto;
@@ -126,9 +127,26 @@ a {
           align-items: center;
   gap: 50px;
 }
+@media screen and (max-width: 1150px) {
+  .header__row {
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .header__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-top: 20px;
+  }
+}
+
+.header__search {
+  width: 100%;
+}
 
 .form {
-  width: 650px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -140,4 +158,47 @@ a {
   padding: 15px 20px;
   width: 100%;
   border-radius: 25px;
+}
+
+.image-wrapper {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 30px 1fr 30px 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 30px;
+  justify-items: center;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 1150px) {
+  .image-wrapper {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 450px) {
+  .image-wrapper {
+    margin-top: 20px;
+    -ms-grid-columns: (1fr)[1];
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.img {
+  width: 350px;
+  height: 200px;
+  margin-top: 15px;
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 2px;
+}
+@media screen and (max-width: 1150px) {
+  .img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .img {
+    width: 100%;
+  }
 }
