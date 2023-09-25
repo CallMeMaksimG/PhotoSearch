@@ -1,0 +1,14 @@
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 150px;
+    background-color: rgb(225, 73, 73);
+    opacity: .6;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    padding: 15px 15px;
+}

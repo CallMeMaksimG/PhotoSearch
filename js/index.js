@@ -1,6 +1,7 @@
 const input = document.querySelector('.form__search');
 const searchBtn = document.querySelector('.form__btn');
 const imageBlock = document.querySelector('.image-wrapper');
+const errorBlock = document.querySelector('error');
 
 input.addEventListener('keydown', function(event) {
     if(event.key === 'Enter') {
@@ -28,13 +29,23 @@ function loadImg() {
             imagesNodes[i] = document.createElement('div');
             imagesNodes[i].className = 'img';
             imagesNodes[i].style.backgroundImage = `url(${data.results[i].urls.raw})`;
-            console.log(imagesNodes[i].style.backgroundImage = `url(${data.results[i].urls.raw})`);
             imageBlock.appendChild(imagesNodes[i]);
         }
+    })
+    .catch(error => {
+        showError();
     })
 }
 
 
 function removeImg() {
     imageBlock.innerHTML = '';
+}
+
+function showError() {
+    const div = document.createElement('div');
+    div.className = 'error';
+    div.innerHTML = `<p class="error__text">Возникла ошибка.<br>Повторите запрос</p>`;
+    document.body.append(div);
+    setTimeout(() => div.remove(), 3000);
 }
