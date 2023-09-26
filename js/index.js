@@ -19,11 +19,10 @@ function loadImg() {
         if (response.ok) {
             return response.json();
         } else {
-            alert(response.status);
+            console.log(response.status);
         }
     })
     .then(data => {
-        console.log(data);
         const imagesNodes = [];
         for (let i = 0; i < data.results.length; i++) {
             imagesNodes[i] = document.createElement('div');
